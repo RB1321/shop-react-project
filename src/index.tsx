@@ -7,25 +7,54 @@ import ReactDOM from 'react-dom/client'
 
 function List() {
     return (
-        <React.Fragment>
+        <>
             <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
-            <p>dsgdfgdsdfsdfg</p>
-        </React.Fragment>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Asperiores eligendi ut error rerum ipsam. Tempora aspernatur
+                officia, sequi, et minima excepturi quas dicta harum, beatae
+                fugit animi aperiam itaque nobis?
+            </p>
+        </>
     )
 }
 
-function Title() {
-    return <h1>Hello TS</h1>
+type TitleProps = {
+    name: string
+    text?: string
+    year?: number
+}
+
+const Title = ({ name, text, year }: TitleProps) => {
+    return (
+        <>
+            <h1>{name}</h1>
+            <span>{text}</span>
+            <span>Year: {year}</span>
+        </>
+    )
 }
 
 const App = () => {
     return (
         <div className="app">
-            <Title />
+            <Title
+                name="React"
+                text=" ipsum, dolor sit amet consectetur adipisicing elit.
+                Asperiores"
+                year={10}
+            />
+            <Title
+                name="App"
+                text=" isdfdsgsgsget consectetur adipisicing elit.
+                Asperiores"
+                year={23}
+            />
+
             <List />
         </div>
     )
