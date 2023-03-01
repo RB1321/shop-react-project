@@ -5,20 +5,34 @@ import ReactDOM from 'react-dom/client'
 // console.log(title)
 //jsx - js extended
 
-const title = <h1 id="title">Hi React.js</h1>
-const content = (
-    <div>
-        {title}
-        {10 + 10}
-        <ul className="list">
-            <li>List item 1</li>
-            <li>List item 2</li>
-            <li> List item 3</li>
-        </ul>
-        <p>Hello</p>
-    </div>
-)
-console.log(content)
+function List() {
+    return (
+        <React.Fragment>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+            <p>dsgdfgdsdfsdfg</p>
+        </React.Fragment>
+    )
+}
 
+function Title() {
+    return <h1>Hello TS</h1>
+}
+
+const App = () => {
+    return (
+        <div className="app">
+            <Title />
+            <List />
+        </div>
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(<React.StrictMode> {content}</React.StrictMode>)
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+)
