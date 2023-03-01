@@ -1,27 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
+import { List } from './List'
 // const title = React.createElement('h1', { id: 'title' }, 'Hello React.js')
 // console.log(title)
 //jsx - js extended
-
-function List() {
-    return (
-        <>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Asperiores eligendi ut error rerum ipsam. Tempora aspernatur
-                officia, sequi, et minima excepturi quas dicta harum, beatae
-                fugit animi aperiam itaque nobis?
-            </p>
-        </>
-    )
-}
 
 type TitleProps = {
     name: string
