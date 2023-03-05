@@ -1,0 +1,14 @@
+.content {
+    color: white;
+    background-color: palevioletred;
+    padding: 15px;
+}
+
+.test {
+    color: white;
+    background-color: peru;
+    padding: 15px;
+}
+.articleDescription {
+    font-size: 25px;
+}
