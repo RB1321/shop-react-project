@@ -1,6 +1,14 @@
 import { Grid, Typography } from '@mui/material'
 import ProductsListItem from './ProductsListItem'
+import productsArray from 'utils/productsArray'
 type Props = {}
+type Product = {
+    title: string
+    description: string
+    type: string
+    capacity: string
+    price: number
+}
 const ProductsList = (props: Props) => {
     return (
         <>
@@ -8,33 +16,17 @@ const ProductsList = (props: Props) => {
                 List of Products
             </Typography>
             <Grid container spacing={4} alignItems="stretch">
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductsListItem
-                        title="iPhone 14 Pro"
-                        description="This is iPhone 14 Pro sadfsdfdsfsdfsdgdsgdsgdsg"
-                        capacity="256"
-                        type="phone"
-                        price={1500}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} alignItems="stretch">
-                    <ProductsListItem
-                        title="iPhone 13 Pro"
-                        description="This is iPhone 13 Pro"
-                        capacity="128"
-                        type="phone"
-                        price={1000}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductsListItem
-                        title="iPhone 12 Pro"
-                        description="This is iPhone 12 Pro"
-                        capacity="512"
-                        type="phone"
-                        price={1000}
-                    />
-                </Grid>
+                {productsArray.map((product: Product) => (
+                    <Grid item xs={12} sm={6} md={4}>
+                        <ProductsListItem
+                            title={product.title}
+                            description={product.description}
+                            capacity={product.capacity}
+                            type={product.type}
+                            price={product.price}
+                        />
+                    </Grid>
+                ))}
             </Grid>
         </>
     )
